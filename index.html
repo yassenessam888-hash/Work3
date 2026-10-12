@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- لغة الصفحة والاتجاه: للتحويل إلى الإنجليزية غيّر lang="en" و dir="ltr" (راجع README) -->
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <!-- مهم للهواتف: يجعل الصفحة تتكيف مع عرض الشاشة -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اسم موقعك | شعار قصير</title>
+  <meta name="description" content="وصف مختصر لموقعك (حتى 155 حرفًا تقريبًا) يظهر في نتائج البحث.">
+  <meta name="theme-color" content="#0f3d3e">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- defer: لا يعطّل ظهور الصفحة -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- ========== الرأس + شريط التنقل ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="الصفحة الرئيسية">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        <span>اسم موقعك</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="القائمة">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="التنقل الرئيسي">
+        <ul>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== البانر الرئيسي ========== -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>عنوان رئيسي واضح يشرح ما تقدمه</h1>
+          <p>جملة قصيرة توضّح القيمة التي يحصل عليها الزائر. استبدل هذا النص بنصك الخاص.</p>
+          <a class="btn" href="#contact">ابدأ الآن</a>
+        </div>
+        <!-- الصورة الأولى تُحمَّل فورًا (بدون lazy) لتحسين الأداء -->
+        <img class="hero-img" src="images/hero.svg" alt="صورة توضيحية مؤقتة" width="640" height="480">
+      </div>
+    </section>
+
+    <!-- ========== من نحن ========== -->
+    <section class="section" id="about">
+      <div class="container split">
+        <img src="images/placeholder.svg" alt="صورة مؤقتة" width="600" height="400" loading="lazy">
+        <div>
+          <h2>من نحن</h2>
+          <p>اكتب هنا نبذة عنك أو عن مشروعك. فقرات قصيرة تُقرأ بسهولة على الهاتف أفضل من الفقرات الطويلة.</p>
+          <p>يمكنك إضافة فقرات أخرى بنسخ وسم &lt;p&gt; ولصقه.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== الخدمات (شبكة بطاقات) ========== -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <h2>خدماتنا</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="images/placeholder.svg" alt="" width="600" height="400" loading="lazy">
+            <h3>الخدمة الأولى</h3>
+            <p>وصف مختصر للخدمة في سطرين أو ثلاثة.</p>
+          </article>
+          <article class="card">
+            <img src="images/placeholder.svg" alt="" width="600" height="400" loading="lazy">
+            <h3>الخدمة الثانية</h3>
+            <p>وصف مختصر للخدمة في سطرين أو ثلاثة.</p>
+          </article>
+          <article class="card">
+            <img src="images/placeholder.svg" alt="" width="600" height="400" loading="lazy">
+            <h3>الخدمة الثالثة</h3>
+            <p>وصف مختصر للخدمة في سطرين أو ثلاثة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== نموذج التواصل ========== -->
+    <section class="section" id="contact">
+      <div class="container narrow">
+        <h2>تواصل معنا</h2>
+        <!-- novalidate: التحقق يتم عبر js/main.js برسائل عربية.
+             لإرسال النموذج فعليًا ضع رابط الخدمة في action (راجع README) -->
+        <form id="contactForm" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="name">الاسم</label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2">
+            <p class="error" id="name-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" name="email" type="email" autocomplete="email" required dir="ltr">
+            <p class="error" id="email-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="message">الرسالة</label>
+            <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+            <p class="error" id="message-error" role="alert"></p>
+          </div>
+          <button class="btn" type="submit">إرسال الرسالة</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== التذييل ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> اسم موقعك. جميع الحقوق محفوظة.</p>
+      <ul>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- زر العودة إلى أعلى الصفحة -->
+  <button class="to-top" id="toTop" aria-label="العودة إلى أعلى الصفحة" hidden>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 5l-7 7h4v7h6v-7h4z" fill="currentColor"/></svg>
+  </button>
+</body>
+</html>
